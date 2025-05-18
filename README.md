@@ -31,18 +31,18 @@ pkg install git openssl-tool zip unzip python openjdk-17 xxd
 ```bash
 git clone https://github.com/snowwolf725/Payload_Repack_Tool.git
 cd Payload_Repack_Tool
-pip install -r requirements.txt
+./payloadRepackTool -s
 ```
 
 ## Usage
 
-### repack `payload.bin`
+### repack `payload.bin without dynamic partition info`
 
 ```bash
 cd Payload_Repack_Tool
 #copy *.img into IMAGES folder
 #cp -a *.img IMAGES
-./repackPayload.sh
+./payloadRepackTool -p nodpart
 ```
 
 ### repack `payload.bin` with dynamic partition info
@@ -53,7 +53,7 @@ cd Payload_Repack_Tool
 #cp -a *.img IMAGES
 #modify META/dynamic_partitions_info.txt
 #vi META/dynamic_partitions_info.txt
-./repackPayload_withDpart.sh
+./payloadRepackTool -p dpart
 ```
 
 ### repack `OTA.zip`
@@ -64,7 +64,7 @@ cd Payload_Repack_Tool
 #cp -a *.img IMAGES
 #modify META/*.txt SYSTEM/build.prop
 #vi META/*.txt SYSTEM/build.prop
-./repackZip.sh
+./payloadRepackTool -o
 ```
 
 ## Demo
